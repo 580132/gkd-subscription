@@ -26,7 +26,7 @@ export default defineGkdApp({
           },
           activityIds:
             'com.dragon.read.component.shortvideo.impl.ShortSeriesActivity',
-          matches: '[text="上滑继续看短剧"][visibleToUser=true]',
+          matches: '[vid="j2h"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/29092674',
           excludeSnapshotUrls: 'https://i.gkd.li/i/29092652', //倒计时未结束
           exampleUrls: 'https://e.gkd.li/36e57d51-d134-4507-9aca-ada9e71b9b14',
