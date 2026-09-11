@@ -10,26 +10,22 @@ export default defineGkdApp({
       desc: '①读秒结束后[上滑] ②4.5秒[上滑]1次',
       rules: [
         {
+          // ② 直播/视频广告：无集数节点时上滑（文字画在视频上，无障碍读不到）
           key: 1,
-          name: '①读秒结束后[上滑]',
+          name: '②无集数节点时上滑',
           fastQuery: true,
-          swipeArg: {
-            start: {
-              x: 'screenWidth/2',
-              y: 'screenHeight * 0.7',
-            },
-            end: {
-              x: 'screenWidth/2',
-              y: 'screenHeight * 0.3',
-            },
-            duration: 200, //滑动时长
-          },
+          actionCd: 6000,
           activityIds:
             'com.dragon.read.component.shortvideo.impl.ShortSeriesActivity',
-          matches: '[vid="j2h"][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/29092674',
-          excludeSnapshotUrls: 'https://i.gkd.li/i/29092652', //倒计时未结束
-          exampleUrls: 'https://e.gkd.li/36e57d51-d134-4507-9aca-ada9e71b9b14',
+          matches: '[vid="f1b"]',
+          excludeMatches: '[vid="k6n"][text~="第.+集"]',
+          action: 'swipe',
+          swipeArg: {
+            start: { x: 'screenWidth/2', y: 'screenHeight*0.7' },
+            end: { x: 'screenWidth/2', y: 'screenHeight*0.3' },
+            duration: 200,
+          },
+          snapshotUrls: ['https://i.gkd.li/i/32098613'],
         },
       ],
     },
